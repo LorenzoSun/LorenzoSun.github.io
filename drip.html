@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>经历</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/base.css" type="text/css">
+    <style>
+        @media only screen and (max-width:1024px){
+            #music{
+                right: 20px;
+                bottom: 20%;
+            }
+        }
+        p{
+            text-indent: 0!important;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class=" container">
+        <div id="music">
+            <img src="image/music.png" alt="音乐">
+            <audio id="myAudio" autoplay loop hidden="true">
+                <source src="media/bm.mp3" type="audio/mpeg">
+                <source src="media/bm.ogg" type="audio/ogg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div id="top">
+            <img src="image/top.png" alt="回到顶部">
+        </div>
+        <div class="header-box">
+            <img src="image/WechatIMG3.jpeg" alt="我的头像">
+        </div>
+        <div class="center">
+            <p class="myid">sf</p>
+        </div>
+        <div class="my-sort center">
+            <a href="index.html">简历</a>
+            <a href="drip.html">经历</a>
+        </div>
+        <div id="artical">
+            <div class="my-artical">
+                 <div class="articals">
+                    <div class="dotts"></div>
+                    <a class="my-date" href="artical/2017.html">
+                        <span class="trig"></span>
+                        <span class="dates">2017-至今</span>
+                    </a>
+                    <div class="ar-container">
+                        <div class="my-line"></div>
+                        <div class="ar-content">
+                            <p class="art-title"><a href="/artical/2017.html">工作重心转移,主动要求部分后端任务</a></p>
+                            <div class="col-md-4 col-xs-8 art-img">
+                                <img src="image/s20.jpg" alt="文章配图">
+                            </div>
+                            <div class="col-md-7 col-xs-10 art-detail">
+                                <p>
+                                    向着小全栈进军
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="my-artical">
+                <div class="articals">
+                    <div class="dotts"></div>
+                    <a class="my-date" href="artical/2016.html">
+                        <span class="trig"></span>
+                        <span class="dates">2016</span>
+                    </a>
+                    <div class="ar-container">
+                        <div class="my-line"></div>
+                        <div class="ar-content">
+                            <p class="art-title"><a href="artical/googleMap.html">移动开发</a></p>
+                            <div class="col-md-5 col-xs-9 art-img">
+                                <img src="image/s19.jpg" alt="文章配图">
+                            </div>
+                            <div class="col-md-10 col-xs-10 art-detail">
+                                <p>
+                                    iOS App、微信公众号、微信小程序开发
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="my-artical">
+                <div class="articals">
+                    <div class="dotts"></div>
+                    <a class="my-date" href="javascript:;">
+                        <span class="trig"></span>
+                        <span class="dates">2015</span>
+                    </a>
+                    <div class="ar-container">
+                        <div class="my-line"></div>
+                        <div class="ar-content">
+                            <p class="art-title"><a href="javascript:;">公司开始了全新的项目哈楼生活</a></p>
+                            <div class="col-md-3 col-xs-9 art-img">
+                                <img src="image/s18.jpg" alt="文章配图">
+                            </div>
+                            <div class="col-md-7 col-xs-10 art-detail">
+                                <p>
+                                    从pc端网页开发开始转向移动开发
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="my-artical">
+            <div class="articals" style="min-height: 3em;">
+                <div class="dotts"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script>
+        $(document).ready(function () {
+
+        //头像淡入
+       $(".header-box").addClass("fadein");
+
+        //回到顶部
+        $("#top").click(function () {
+            $('html,body').animate({
+                scrollTop: 0
+            }, 700);
+        });
+        showScroll();
+        var min_height = document.documentElement.clientHeight /2;
+        function showScroll() {
+            $(window).scroll(function() {
+                var s = $(window).scrollTop();
+                s > min_height ? $('#top').fadeIn() : $('#top').fadeOut();
+            });
+        }
+
+        //音乐关闭
+        $("#music").bind("click", function () {
+           $(this).toggleClass("pause");
+            var audio = $("#music audio")[0];
+            if(audio.paused){
+                audio.play();//audio.play();// 这个就是播放
+            }else{
+                audio.pause();// 这个就是暂停
+            }
+        });
+    });
+</script>
+</body>
+</html>
