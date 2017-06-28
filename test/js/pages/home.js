@@ -108,10 +108,10 @@ Laro.register('JxHome', function (La) {
 			_this.angleY = (x - _this.vpx) * .00001;
             _this.angleX = (y - _this.vpy) * .00001;
 		});
-        document.getElementById('skip-btn').addEventListener('click', function (e) {
-            e.preventDefault();
-            window.location.href = 'home_nocanvas.html';
-        }, false);
+        //document.getElementById('skip-btn').addEventListener('click', function (e) {
+        //    e.preventDefault();
+        //    window.location.href = 'home_nocanvas.html';
+        //}, false);
 	}
 	
 	this.initParticles = function () {
@@ -534,7 +534,7 @@ Laro.register('JxHome.$states', function (La) {
 		transition: function () {
 			if (this._t > 7 && !this.tryJump) {
 				window.location.href = 'home_nocanvas.html';
-				this.tryJump = true;
+				//this.tryJump = true;
 			}
 		},
 		draw: function () {
